@@ -1,0 +1,15 @@
+{
+	"servidores": {
+		"HUVN": {
+			"nombre": "Hospital Universitario Virgen de las Nieves",
+			"url": "https://huvn.granadasalud.es/gesforma/",
+			"provincia": "Granada"
+		},
+		"HUSC": {
+			"nombre": "Hospital Universitario San Cecilio",
+			"url": "https://husc.granadasalud.es/gesforma/",
+			"provincia": "Granada"
+		}
+	},
+	"espera": 1
+}
