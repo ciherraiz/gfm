@@ -1,4 +1,3 @@
-import json
 import re
 from time import sleep
 from bs4 import BeautifulSoup
@@ -7,17 +6,13 @@ import requests
 
 requests.urllib3.disable_warnings()
 
-# Read configuration file
-with open('conf.json', 'r') as j:
-     cfg = json.loads(j.read())
-
 def scrap_servers(servers, delay):
     data = []
     for c, v in servers.items():
         data += scrap_center(c, v)
         sleep(delay)
     df = pd.DataFrame.from_records(data)
-    print(df)
+    return df
 
 
 def scrap_center(id, center):
@@ -53,5 +48,8 @@ def scrap_course(idcenter, center, item):
     return data
 
 if __name__ == "__main__":
+    import json
+    with open('conf.json', 'r') as j:
+        cfg = json.loads(j.read())
     print(cfg)
     scrap_servers(cfg['servidores'], cfg['espera'])
