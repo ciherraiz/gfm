@@ -1,36 +1,64 @@
 {
+    "ruta_datos": "datos/",
+    "nombre_fichero": "cursos.parquet.gzip",
+	"espera": 0,
 	"servidores": {
+        "SSCC": {
+			"centro": "Servicios Centrales",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/sscc/gesforma/",
+			"provincia": "Sevilla"
+		},
 		"HUVN": {
-			"nombre": "Hospital Universitario Virgen de las Nieves",
+			"centro": "Hospital Universitario Virgen de las Nieves",
 			"url": "https://huvn.granadasalud.es/gesforma/",
 			"provincia": "Granada"
 		},
 		"HUSC": {
-			"nombre": "Hospital Universitario San Cecilio",
+			"centro": "Hospital Universitario San Cecilio",
 			"url": "https://husc.granadasalud.es/gesforma/",
 			"provincia": "Granada"
 		},
         "DSGM": {
-			"nombre": "Distrito Sanitario Granada Metropolitano",
+			"centro": "Distrito Sanitario Granada Metropolitano",
 			"url": "https://dsgm.granadasalud.es/gesforma/",
 			"provincia": "Granada"
 		},
         "AGSSG": {
-			"nombre": "AGS Sur de Granada",
+			"centro": "AGS Sur de Granada",
 			"url": "https://agss.granadasalud.es/gesforma/",
 			"provincia": "Granada"
 		},
         "AGSNG": {
-			"nombre": "AGS Nordeste de Granada",
+			"centro": "AGS Nordeste de Granada",
 			"url": "https://agsng.granadasalud.es/gesforma/",
 			"provincia": "Granada"
 		},
         "HUJ": {
-			"nombre": "Hospital Universitario de Jaén",
+			"centro": "Hospital Universitario de Jaén",
 			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/chj/gesforma",
+			"provincia": "Jaén"
+		}, 
+        "AGSNJ": {
+			"centro": "AGS Norte de Jaén",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agsnj/gesforma",
+			"provincia": "Jaén"
+		}, 
+        "AGSNEJ": {
+			"centro": "AGS Nordeste de Jaén",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agsnej/gesforma",
+			"provincia": "Jaén"
+		}, 
+        "DSJJS": {
+			"centro": "Distrito Jaén - Jaén Sur",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dsj-dsjs/gesforma",
+			"provincia": "Jaén"
+		}, 
+        "CRTSJ": {
+			"centro": "CTTC Jaén",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/crts-jaen/gesforma",
 			"provincia": "Jaén"
 		}
         
-	},
-	"espera": 1
+	}
+  
 }
