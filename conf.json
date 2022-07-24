@@ -9,7 +9,28 @@
 			"nombre": "Hospital Universitario San Cecilio",
 			"url": "https://husc.granadasalud.es/gesforma/",
 			"provincia": "Granada"
+		},
+        "DSGM": {
+			"nombre": "Distrito Sanitario Granada Metropolitano",
+			"url": "https://dsgm.granadasalud.es/gesforma/",
+			"provincia": "Granada"
+		},
+        "AGSSG": {
+			"nombre": "AGS Sur de Granada",
+			"url": "https://agss.granadasalud.es/gesforma/",
+			"provincia": "Granada"
+		},
+        "AGSNG": {
+			"nombre": "AGS Nordeste de Granada",
+			"url": "https://agsng.granadasalud.es/gesforma/",
+			"provincia": "Granada"
+		},
+        "HUJ": {
+			"nombre": "Hospital Universitario de Jaén",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/chj/gesforma",
+			"provincia": "Jaén"
 		}
+        
 	},
 	"espera": 1
 }
