@@ -58,7 +58,7 @@ def scrap_course(idcenter, center, item):
 
 def actualiza_cursos(df, nuevo_df):
     df_total = pd.concat([nuevo_df, df])
-    df_total.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    df_total.drop_duplicates(subset=['id'], keep='first', inplace=True) # keep most recent values
     return df_total
 
 def carga_cursos(ruta=ruta_fichero):
