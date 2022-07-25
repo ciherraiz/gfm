@@ -38,18 +38,18 @@ def scrap_course(idcenter, center, item):
         data['provincia'] = center['provincia']
         data['titulo'] = texts[0].string
         match = re.findall(r'(\d+/\d+/\d+)', texts[1].string)
-        data['inicio'] = match[0]
-        data['fin'] = match[1]
+        data['inicio'] = datetime.datetime.strptime(match[0],'%d/%m/%Y')
+        data['fin'] = datetime.datetime.strptime(match[1],'%d/%m/%Y')
         match = re.findall(r'(\d+/\d+/\d+)', texts[2].string)
-        data['ins_inicio'] = match[0]
-        data['ins_fin'] = match[1]
+        data['ins_inicio'] = datetime.datetime.strptime(match[0],'%d/%m/%Y')
+        data['ins_fin'] = datetime.datetime.strptime(match[1],'%d/%m/%Y')
         match = re.findall(r'(\d+)', texts[3].string)
-        data['plazas'] = match[0]
+        data['plazas'] = int(match[0])
         match = re.findall(r'(\d+)', texts[4].string)
-        data['solicitudes'] = match[0]
+        data['solicitudes'] = int(match[0])
         data['aula'] = texts[5].string
 
-        id = data['id_centro'] + data['titulo'] + data['inicio']
+        id = data['id_centro'] + data['titulo'] + data['inicio'].strftime('%d/%m/%Y')
         id_hash = hashlib.md5(id.encode('utf-8')).hexdigest()
         data['id'] = id_hash
         data['momento'] = datetime.datetime.now()
@@ -64,12 +64,8 @@ def actualiza_cursos(df, nuevo_df):
 def carga_cursos(ruta=ruta_fichero):
     try:
         df = pd.read_parquet(ruta)
-        df['inicio'] = pd.to_datetime(df['inicio'], format='%d/%m/%Y')
-        df['fin'] = pd.to_datetime(df['fin'], format='%d/%m/%Y')
-        df['ins_inicio'] = pd.to_datetime(df['ins_inicio'], format='%d/%m/%Y')
-        df['ins_fin'] = pd.to_datetime(df['ins_fin'], format='%d/%m/%Y')
     except Exception as e:
-        #print(e) 
+        print(e) 
         df = pd.DataFrame()
         
     return df
@@ -83,7 +79,13 @@ if __name__ == "__main__":
     from time import sleep
     with open('conf.json', 'r') as j:
         cfg = json.loads(j.read())
-    
-    df = carga_cursos()
-    print(df.info())
-    print(df.head(10))
+    data = []
+    for c, v in cfg['servidores'].items():
+        data += scrap_center(c, v)
+        print(data)
+
+
+
+    #df = carga_cursos()
+    #print(df.info())
+    #print(df.head(10))

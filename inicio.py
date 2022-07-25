@@ -31,20 +31,16 @@ with col1:
 
         df_nuevo = pd.DataFrame.from_records(data)
 
-        if df.columns.to_list() == df_nuevo.columns.to_list():
-            df = actualiza_cursos(df, df_nuevo)
-        else:
-            df = df_nuevo
-            st.warning('Histórico descartado por cambio en estructura de datos')
+        df = actualiza_cursos(df, df_nuevo)
 
         almacena_cursos(df)
 
+        print(df.info())
         fin = time.time()
         st.markdown(f'<span style="color:green;font-size:12px">Actualización finalizada en {fin-inicio:.2f} seg.</span>', unsafe_allow_html=True)
 
-
 with col2:
-    csv = df.to_csv()
+    csv = df.to_csv(index=False)
     st.download_button(
         label="Descargar CSV",
         data=csv,
