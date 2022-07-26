@@ -56,9 +56,15 @@ def scrap_course(idcenter, center, item):
 
     return data
 
-def actualiza_cursos(df, nuevo_df):
-    df_total = pd.concat([nuevo_df, df])
-    df_total.drop_duplicates(subset=['id'], keep='first', inplace=True) # keep most recent values
+def actualiza_cursos(df, df_nuevo):
+    # conservamos el valor de cuando descargamos por primera vez (momento)
+    df_cruce = df_nuevo.merge(df, how='left', on='id', suffixes=('', '_old'), indicator=True)
+    df_cruce['momento'] = df_cruce[df_cruce['_merge']=='both']['momento_old']
+    df_nuevo_act = df_cruce[df_nuevo.columns]
+    # actualizamos el histórico
+    df_total = pd.concat([df_nuevo_act, df])
+    # en caso de duplicado, me quedo con la fila más actual, la que encuentro primero
+    df_total.drop_duplicates(subset=['id'], keep='first', inplace=True)
     return df_total
 
 def carga_cursos(ruta=ruta_fichero):
@@ -80,9 +86,11 @@ if __name__ == "__main__":
     with open('conf.json', 'r') as j:
         cfg = json.loads(j.read())
     data = []
-    for c, v in cfg['servidores'].items():
-        data += scrap_center(c, v)
-        print(data)
+    #for c, v in cfg['servidores'].items():
+    #    data += scrap_center(c, v)
+    #    print(data)
+    df = carga_cursos()
+    actualiza_cursos(df, df)
 
 
 
