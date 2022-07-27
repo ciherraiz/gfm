@@ -8,17 +8,20 @@ df = carga_cursos()
 
 df_f = df.loc[(df['ins_inicio'] <= hoy) & (df['ins_fin'] >= hoy)]
 inscripciones_abiertas = len(df_f)
+st.metric('Inscripciones abiertas', inscripciones_abiertas)
+
+df_fg = df_f.groupby(['provincia']).size()
+fig = plt.figure()
+ax = fig.subplots()
+df_fg.plot(kind="bar", ax=ax, title='Inscripciones abiertas por provincia')
+ax.set(xlabel='Centro', ylabel='Cursos')
+st.pyplot(fig)
+
 
 df_fg = df_f.groupby(['id_centro']).size()
+fig = plt.figure()
+ax = fig.subplots()
+df_fg.plot(kind="bar", ax=ax, title='Inscripciones abiertas por centro')
+ax.set(xlabel='Centro', ylabel='Cursos')
 
-col1, col2 = st.columns(2)
-
-with col1:
-    st.metric('Inscripciones abiertas', inscripciones_abiertas)
-with col2:
-    fig = plt.figure()
-    ax = fig.subplots()
-    df_fg.plot(kind="bar", ax=ax, title='Inscripciones abiertas por centro')
-    ax.set(xlabel='Centro', ylabel='Cursos')
-
-    st.pyplot(fig)
+st.pyplot(fig)

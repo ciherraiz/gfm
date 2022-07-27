@@ -6,7 +6,7 @@
         "SSCC": {
 			"centro": "Servicios Centrales",
 			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/sscc/gesforma/",
-			"provincia": "Sevilla"
+			"provincia": "Global"
 		},
 		"HUVN": {
 			"centro": "Hospital Universitario Virgen de las Nieves",
@@ -77,8 +77,152 @@
 			"centro": "Distrito Sanitario Poniente de Almería",
 			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dponiente/gesforma",
 			"provincia": "Almería"
+		},
+		"AGSNC": {
+			"centro": "Área de Gestión Sanitaria de Jerez, Costa Noroeste y Sierra de Cádiz",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agsnc/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"DSBCJ": {
+			"centro": "Distrito Sanitario AP Bahía de Cádiz – La Janda",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dsbcj/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"HUPM": {
+			"centro": "Hospital Universitario Puerta del Mar",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/hupm/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"HUPR": {
+			"centro": "Hospital Universitario Puerto Real",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/hupr/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"AGSCGO": {
+			"centro": "Área de Gestión Sanitaria Campo de Gibraltar Oeste",
+			"url": "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/agscgo/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"AGSCGE": {
+			"centro": "Área de Gestión Sanitaria Campo de Gibraltar Este",
+			"url": "https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/agscge/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"CTTC": {
+			"centro": "CTTC de Cádiz",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/cttc-cadiz/gesforma",
+			"provincia": "Cádiz"
+		}, 
+		"HURS": {
+			"centro": "Hospital Universitario Reina Sofía",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/hurs/gesforma",
+			"provincia": "Córdoba"
+		}, 
+		"ASNC": {
+			"centro": "Area Sanitaria Norte de Córdoba",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/asnc/gesforma",
+			"provincia": "Córdoba"
+		},
+		"AGSSC": {
+			"centro": "Area de Gestión Sanitaria Sur de Córdoba",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agssc/gesforma",
+			"provincia": "Córdoba"
+		},
+		"DSCG": {
+			"centro": "Distrito Sanitario Córdoba-Guadalquivir",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dscg/gesforma",
+			"provincia": "Córdoba"
+		},
+		"CRTSC": {
+			"centro": "Centro Regional de Transfusión Sanguínea",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/crts-cordoba/gesforma",
+			"provincia": "Córdoba"
+		},
+		"HRT": {
+			"centro": "AGS Norte de Huelva",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/hrt/gesforma",
+			"provincia": "Huelva"
+		}, 
+		"DSCC": {
+			"centro": "DS Condado Campiña",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dscc/gesforma",
+			"provincia": "Huelva"
+		}, 
+		"DSHC": {
+			"centro": "DS Huelva Costa",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dshc/gesforma",
+			"provincia": "Huelva"
+		}, 
+		"HIE": {
+			"centro": "Hosp. Infanta Elena",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/hie/gesforma",
+			"provincia": "Huelva"
+		}, 
+		"HJRJ": {
+			"centro": "Hosp. J.R. Jiménez",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/ahjrj/gesforma",
+			"provincia": "Huelva"
+		}, 
+		"CTTCH": {
+			"centro": "CTTC Huelva",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/cts/gesforma",
+			"provincia": "Huelva"
+		},
+		"AGSEMA": {
+			"centro": "AGS Este de Málaga – Axarquía",
+			"url": "http://www.juntadeandalucia.es/servicioandaluzdesalud/areasanitariaaxarquia/gesforma/",
+			"provincia": "Málaga"
+		},
+		"AGSNM": {
+			"centro": "AGS Norte de Málaga",
+			"url": "http://www.juntadeandalucia.es/sas/hantequera/gesforma/",
+			"provincia": "Málaga"
+		},
+		"AGSM": {
+			"centro": "AGS Serranía de Málaga",
+			"url": "http://www.juntadeandalucia.es/servicioandaluzdesalud/agss/gesforma/",
+			"provincia": "Málaga"
+		},
+		"HRUM": {
+			"centro": "Hospital Regional Universitario Málaga",
+			"url": "http://www.hospitalregionaldemalaga.es/gesforma/",
+			"provincia": "Málaga"
+		},
+		"HUVV": {
+			"centro": "Hospital Universitario Virgen de la Victoria",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/huvv/gesforma",
+			"provincia": "Málaga"
+		},
+		"AGSO": {
+			"centro": "AGS Osuna",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/agso/gesforma/",
+			"provincia": "Sevilla"
+		},
+		"AGSSS": {
+			"centro": "AGS Sur de Sevilla",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agsss/gesforma/",
+			"provincia": "Sevilla"
+		},
+		"DSASN": {
+			"centro": "DS Aljarafe – Sevilla Norte",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/dsasn/gesforma/",
+			"provincia": "Sevilla"
+		},
+		"DSS": {
+			"centro": "DS Sevilla",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/dss/gesforma/",
+			"provincia": "Sevilla"
+		},
+		"HUVR": {
+			"centro": "Hosp. Virgen del Rocío",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/huvr/gesforma/",
+			"provincia": "Sevilla"
+		},
+		"HUVM": {
+			"centro": "Hosp. Virgen Macarena",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/sevilla/sasformacion/huvm/gesforma/",
+			"provincia": "Sevilla"
 		}
-        
 	}
   
 }

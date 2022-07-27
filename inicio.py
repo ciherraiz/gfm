@@ -11,6 +11,7 @@ with open('conf.json', 'r') as j:
 
 df = carga_cursos()
 
+st.write("[Servidores Gesforma](https://www.formacionsspa.es/gesforma-sspa/)")
 
 if st.button('Actualizar'):
     inicio = time.time()
