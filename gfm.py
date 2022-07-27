@@ -2,6 +2,7 @@ from bz2 import compress
 import datetime
 import hashlib
 import json
+import os
 import re
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -58,13 +59,16 @@ def scrap_course(idcenter, center, item):
 
 def actualiza_cursos(df, df_nuevo):
     # conservamos el valor de cuando descargamos por primera vez (momento)
-    df_cruce = df_nuevo.merge(df, how='left', on='id', suffixes=('', '_old'), indicator=True)
-    df_cruce['momento'] = df_cruce[df_cruce['_merge']=='both']['momento_old']
-    df_nuevo_act = df_cruce[df_nuevo.columns]
-    # actualizamos el histórico
-    df_total = pd.concat([df_nuevo_act, df])
-    # en caso de duplicado, me quedo con la fila más actual, la que encuentro primero
-    df_total.drop_duplicates(subset=['id'], keep='first', inplace=True)
+    if not df.empty:
+        df_cruce = df_nuevo.merge(df, how='left', on='id', suffixes=('', '_old'), indicator=True)
+        df_cruce.loc[df_cruce['_merge']=='both','momento'] = df_cruce[df_cruce['_merge']=='both']['momento_old']
+        df_nuevo_act = df_cruce[df_nuevo.columns]
+        # actualizamos el histórico
+        df_total = pd.concat([df_nuevo_act, df])
+        # en caso de duplicado, me quedo con la fila más actual, la que encuentro primero
+        df_total.drop_duplicates(subset=['id'], keep='first', inplace=True)
+    else:
+        df_total = df_nuevo
     return df_total
 
 def carga_cursos(ruta=ruta_fichero):
@@ -79,6 +83,11 @@ def carga_cursos(ruta=ruta_fichero):
 def almacena_cursos(df, ruta=ruta_fichero):
     df.to_parquet(ruta, compression='gzip', index=False)
 
+def elimina_cursos(ruta=ruta_fichero):
+    try:
+        os.remove(ruta)
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     import json
@@ -86,11 +95,12 @@ if __name__ == "__main__":
     with open('conf.json', 'r') as j:
         cfg = json.loads(j.read())
     data = []
-    #for c, v in cfg['servidores'].items():
-    #    data += scrap_center(c, v)
-    #    print(data)
+    for c, v in cfg['servidores'].items():
+        data += scrap_center(c, v)
+    print(data)
     df = carga_cursos()
-    actualiza_cursos(df, df)
+    df_nuevo = pd.DataFrame.from_records(data)
+    actualiza_cursos(df, df_nuevo)
 
 
 

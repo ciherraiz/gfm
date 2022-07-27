@@ -57,6 +57,26 @@
 			"centro": "CTTC Jaén",
 			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/crts-jaen/gesforma",
 			"provincia": "Jaén"
+		},
+		"CHT": {
+			"centro": "Complejo Hospitalario Torrecárdenas",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/cht/gesforma",
+			"provincia": "Almería"
+		},
+		"AGSNA": {
+			"centro": "Área de Gestión Sanitaria Norte de Almería",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/agsna/gesforma",
+			"provincia": "Almería"
+		},
+		"DSA": {
+			"centro": "Distrito Sanitario de Almería",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dalmeria/gesforma",
+			"provincia": "Almería"
+		},
+		"DSPA": {
+			"centro": "Distrito Sanitario Poniente de Almería",
+			"url": "https://www.juntadeandalucia.es/servicioandaluzdesalud/dponiente/gesforma",
+			"provincia": "Almería"
 		}
         
 	}
