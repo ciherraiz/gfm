@@ -5,6 +5,17 @@ import pandas as pd
 import streamlit as st
 from gfm import scrap_center, actualiza_cursos, carga_cursos, almacena_cursos
 
+st.set_page_config(
+     page_title='GFM',
+     page_icon=':ledger:',
+     layout='wide',
+     initial_sidebar_state='expanded',
+     menu_items={
+         'Get help': 'https://www.formacionsspa.es/gesforma-sspa/',
+         'About': "-"
+     }
+ )
+
 # Read configuration file
 with open('conf.json', 'r') as j:
      cfg = json.loads(j.read())
