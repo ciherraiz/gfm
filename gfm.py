@@ -95,13 +95,15 @@ if __name__ == "__main__":
     with open('conf.json', 'r') as j:
         cfg = json.loads(j.read())
     data = []
-    for c, v in cfg['servidores'].items():
-        data += scrap_center(c, v)
-    print(data)
+    #for c, v in cfg['servidores'].items():
+    #    data += scrap_center(c, v)
+    #print(data)
     df = carga_cursos()
-    df_nuevo = pd.DataFrame.from_records(data)
-    actualiza_cursos(df, df_nuevo)
+    #df_nuevo = pd.DataFrame.from_records(data)
+    #actualiza_cursos(df, df_nuevo)
 
+    df_tmp = df.loc[df['momento'] >= datetime.date.today().strftime('%Y-%m-%d')]
+    print(df_tmp)
 
 
     #df = carga_cursos()

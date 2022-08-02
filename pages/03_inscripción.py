@@ -3,7 +3,7 @@ from gfm import carga_cursos
 import pandas as pd
 import streamlit as st
 
-hoy = datetime.date.today().strftime("%d/%m/%Y")
+hoy = datetime.date.today().strftime("%Y-%m-%d")
 df = carga_cursos()
 
 df_filtrado = df.loc[(df['ins_inicio'] <= hoy ) & (df['ins_fin'] >= hoy)].copy()
