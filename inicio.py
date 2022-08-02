@@ -47,7 +47,7 @@ if st.button('Actualizar'):
     fin = time.time()
     st.write(f'Servidores: {n_servidores}')
     st.write(f'Actualizado en {fin-inicio:.2f} seg.')
-    df_tmp = df.loc[df['momento'] >= datetime.date.today().strftime('%d/%m/%Y')]
+    df_tmp = df.loc[df['momento'] >= datetime.date.today().strftime('%Y-%m-%d')]
     st.write(f"Nuevos cursos hoy: {len(df_tmp)}")
 
 
