@@ -17,7 +17,7 @@ st.set_page_config(
  )
 
 # Read configuration file
-with open('conf.json', 'r') as j:
+with open('conf.json', 'r', encoding='utf-8-sig') as j:
      cfg = json.loads(j.read())
 
 df = carga_cursos()
@@ -49,6 +49,7 @@ if st.button('Actualizar'):
     st.write(f'Actualizado en {fin-inicio:.2f} seg.')
     df_tmp = df.loc[df['momento'] >= datetime.date.today().strftime('%Y-%m-%d')]
     st.write(f"Nuevos cursos hoy: {len(df_tmp)}")
+    st.dataframe(df_tmp[['titulo', 'provincia', 'centro', 'aula', 'ins_inicio']])
 
 
     csv = df.to_csv(index=False)

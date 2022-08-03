@@ -1,4 +1,3 @@
-from bz2 import compress
 import datetime
 import hashlib
 import json
@@ -10,7 +9,7 @@ import requests
 
 requests.urllib3.disable_warnings()
 
-with open('conf.json', 'r') as j:
+with open('conf.json', 'r', encoding='utf-8-sig') as j:
     cfg = json.loads(j.read())
 
 ruta_datos = cfg['ruta_datos']
